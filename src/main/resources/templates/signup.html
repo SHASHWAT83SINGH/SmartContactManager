@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::section})}">
+
+<head>
+	<meta charset="UTF-8">
+	<title>This is SignUp</title>
+</head>
+
+<body>
+	<section>
+		<div class="container">
+
+			<div class="row">
+				<div class="col-mid-8">
+					<div class="mycard">
+
+						<h1 class="text-center">Signup Here!</h1>
+						<form novalidate action="" th:action="@{do_register}" method="post" th:object="${user}">
+
+
+							<!--Name field -->
+							<div class="form-group">
+								<label for="name_field">Your Name</label>
+								<input name="name" type="text" class="form-control" th:classappend="${#fields.hasErrors('name')? 'is-invalid' :''}" id="name_field"
+									aria-describedby="emailHelp" placeholder="Enter Your Name" th:value="${user}" />
+
+								<div class="invalid-feedback" th:each="e: ${#fields.errors('name')}" th:text="${e}" >
+									
+								</div>
+							</div>
+
+
+							<!--Email field -->
+							<div class="form-group">
+								<label for="email_field">Your Email</label>
+								<input name="email" type="email" class="form-control" th:classappend="${#fields.hasErrors('email')? 'is-invalid' :''}" id="email_field"
+									aria-describedby="emailHelp" placeholder="Enter Your Email"
+									th:value="${user.email}" />
+									<div class="invalid-feedback" th:each="e: ${#fields.errors('email')}" th:text="${e}" >
+									
+								</div>
+
+
+							</div>
+
+
+							<!--Password field -->
+							<div class="form-group">
+								<label for="password_field">Your Password</label>
+								<input name="password" type="password" class="form-control" id="password_field"
+									aria-describedby="emailHelp" placeholder="Enter Your Password">
+
+
+
+							</div>
+
+
+							<!-- user about field -->
+
+							<div class="form-group">
+								<label for="about">About-You</label>
+								<textarea name="about" th:value="${user.about}"
+									placeholder="Enter something about yourself" rows="10"
+									class="form-control"></textarea>
+
+								<!-- this is a check box for the term condition-->
+								<div class="form group form-check">
+
+									<input type="checkbox" name="agreement" class="form-check-input" id="agreement">
+									<label for="agreement">Accept Terms And Condition</label>
+
+								</div>
+
+
+
+							</div>
+
+							<div class="container text-center">
+								<button type="submit" class="btn btn-primary">
+
+									submit
+								</button>
+								<button type="reset" class="btn btn-primary">
+
+									Reset
+								</button>
+							</div>
+						</form>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	</section>
+</body>
+
+</html>

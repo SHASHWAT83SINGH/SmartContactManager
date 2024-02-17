@@ -1,0 +1,70 @@
+body {
+	background: #e2e2e2;
+}
+
+.bg-primary {
+
+	background: #20c997;
+	;
+}
+
+.banner {
+	width: 100%;
+	height: 93vh;
+	background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/Contact.png);
+	background-size: cover;
+	color: black;
+
+}
+.mycard
+{
+	padding: 20px;
+	background: #ffffff;
+	
+}
+
+/* SIDEBAR STYLR */
+
+.sidebar{
+	
+	width :18%;
+	background: white;
+	height: 100%;
+	position: fixed;
+	padding: 45px;
+	
+}
+
+.sidebar a{
+	display: block;
+	width: 100%;
+	padding: 5px 25px ;
+	text-decoration: none;
+	color: dimgray;
+	
+}
+.sidebar a:hover{
+	
+	background: #e2e2e2
+}
+.sidebar .divider{
+	height: 0.5px;
+	width: 100%;
+	background: #e2e2e2;
+	margin-top: 10px;
+	
+}
+
+.content{
+	
+	margin-left: 20%;
+	
+}
+.sidebar .cross-btn{
+	
+	position: absolute;
+	top: 0px;
+	right: 35px;
+	font-size: 36px;
+	cursor: pointer;
+}
